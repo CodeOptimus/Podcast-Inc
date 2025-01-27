@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"
+    />
+    <link rel="stylesheet" href="./style.css" />
+    <title>Podcast Inc</title>
+  </head>
+  <body>
+    <header class="header">
+      <!-- <div class="container"> -->
+      <div class="logo">
+        <img src="./Assets/logo.png" alt="podcast logo" />
+      </div>
+      <div class="nav">
+        <nav class="nav-items">
+          <ul>
+            <li class="nav-item"><a href="#episode">Episode</a></li>
+            <li class="nav-item"><a href="#review">Review</a></li>
+            <li class="nav-item"><a href="#blog">Blog</a></li>
+            <li class="nav-item"><a href="#contact">Contact</a></li>
+            <li class="nav-item">
+              <a href="#login" class="login linked">Login</a>
+            </li>
+            <li class="nav-item">
+              <a href="#subscribe" class="subscribe linked">Subscribe</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+      <!-- </div> -->
+    </header>
+    <section class="hero">
+      <div class="container">
+        <div class="hero-context">
+          <h1 class="theme">
+            WE TALK,<br />
+            YOU LISTEN
+          </h1>
+          <p>The most interactive show on the internet</p>
+        </div>
+        <div class="audio-player">
+          <p class="text">Start Listening</p>
+          <div class="visualizer">
+            <span></span><span></span><span></span><span></span><span></span>
+          </div>
+          <button class="play-pause">
+            <span class="play-icon">&#9658;</span>
+            <span class="pause-icon" style="display: none"
+              >&#10074;&#10074;</span
+            >
+          </button>
+          <audio
+            id="audio"
+            src="./Assets/relaxation_sound_432Hz_5min_compressed.mp3"
+          ></audio>
+        </div>
+      </div>
+    </section>
+
+    <main>
+      <section class="popular">
+        <div class="head">
+          <h2 class="heading">Popular & Trending</h2>
+          <span class="gray">See All Trending Podcast</span>
+        </div>
+        <div class="context-main">
+          <div class="elapse">
+            <div class="play">
+              <img src="./Assets/host-1.png" alt="" />
+            </div>
+            <div class="co-play">
+              <img src="./Assets/host-2.png" alt="" />
+            </div>
+          </div>
+          <div class="content">
+            <span class="producer-name gray">JONATHAN EDEM</span>
+            <h2 class="spread">
+              Among Podcasts With A Similar Concept Or Genre, What Topics Do
+              They Discuss?
+            </h2>
+            <div class="date">
+              <span class="pod gray">Podcast</span>
+              <span>December 10</span>
+            </div>
+            <div>
+              <p class="spread gray">
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                Beatae, perspiciatis? Consequatur fuga eos odio deleniti
+                exercitationem explicabo perferendis vitae harum aliquam
+                molestias tenetur, incidunt quidem officiis.
+              </p>
+              <div class="cta">
+                <img src="./Assets/pod-sound.png" alt="" />
+                <a href="#">Open Now</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="explore-more">
+        <div class="nav-container">
+          <div>
+            <h2 class="heading">Explore More Podcasts</h2>
+          </div>
+          <div class="nav-bar">
+            <nav class="nav">
+              <a href="#all">All</a>
+              <a href="#music">Music</a>
+              <a href="#tech">Technology</a>
+              <a href="#business">Business</a>
+              <a href="#entertainment">Entertainment</a>
+            </nav>
+          </div>
+        </div>
+        <div class="podcast-list">
+            <div class="podcast-audio">
+                <img src="./Assets/cover-pic.png" alt="">
+                <div class="details">
+                    <h4>The design principles</h4>
+                    <p class="gray">Episode 1. Season 2</p>
+                    <img src="./Assets/music-bar.png" alt="">
+                </div>
+            </div>
+            <div class="podcast-audio">
+                <img src="./Assets/cover-pic.png" alt="">
+                <div class="details">
+                    <h4>The design principles</h4>
+                    <p class="gray">Episode 1. Season 2</p>
+                    <img src="./Assets/music-bar.png" alt="">
+                </div>
+            </div>
+            <div class="podcast-audio">
+                <img src="./Assets/cover-pic.png" alt="">
+                <div class="details">
+                    <h4>The design principles</h4>
+                    <p class="gray">Episode 1. Season 2</p>
+                    <img src="./Assets/music-bar.png" alt="">
+                </div>
+            </div>
+            <div class="podcast-audio">
+                <img src="./Assets/cover-pic.png" alt="">
+                <div class="details">
+                    <h4>The design principles</h4>
+                    <p class="gray">Episode 1. Season 2</p>
+                    <img src="./Assets/music-bar.png" alt="">
+                </div>
+            </div>
+            <div class="podcast-audio">
+                <img src="./Assets/cover-pic.png" alt="">
+                <div class="details">
+                    <h4>The design principles</h4>
+                    <p class="gray">Episode 1. Season 2</p>
+                    <img src="./Assets/music-bar.png" alt="">
+                </div>
+            </div>
+            <div class="podcast-audio">
+                <img src="./Assets/cover-pic.png" alt="">
+                <div class="details">
+                    <h4>The design principles</h4>
+                    <p class="gray">Episode 1. Season 2</p>
+                    <img src="./Assets/music-bar.png" alt="">
+                </div>
+            </div>
+        </div>
+
+        <div class="offer">
+          <h2 class="heading">We Offer the best for you</h2>
+          <p class="gray">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem, qui?
+          </p>
+        </div>
+
+        <div class="services-area">
+          <div class="service">
+            <img src="./Assets/hq.png" alt="" />
+            <h2>High Quality Audio</h2>
+            <p class="gray">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+            </p>
+          </div>
+          <div class="service">
+            <img src="./Assets/multi-platform.png" alt="" />
+            <h2>Multi Platform</h2>
+            <p class="gray">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+            </p>
+          </div>
+          <div class="service">
+            <img src="./Assets/options.png" alt="" />
+            <h2>Interesting Content</h2>
+            <p class="gray">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+            </p>
+          </div>
+          <div class="service">
+            <img src="./Assets/Frame.png" alt="" />
+            <h2>A lot of Podcast</h2>
+            <p class="gray">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="testimonials">
+        <div class="test-heading">
+          <p>TESTIMONIALS</p>
+          <h2 class="heading">Our Lovely Student Reviews</h2>
+        </div>
+        <article>
+          <div class="swiper">
+            <div class="swiper-wrapper">
+              <!-- Slide 1 -->
+              <div class="swiper-slide">
+                <h3>Amazing Information</h3>
+                <div class="date">
+                  <span class="pod gray">Podcast</span>
+                  <span>December 10</span>
+                </div>
+                <p class="gray">
+                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                  Vitae aliquam cupiditate, fugit facilis asperiores
+                  perspiciatis eveniet in dolorem non itaque.
+                </p>
+
+                <div class="profile">
+                  <img src="./Assets/enam.png" alt="enam's-photo" />
+                  <div class="profile-details">
+                    <h3>Enam Baity</h3>
+                    <p class="gray">UI/UX Designer</p>
+                  </div>
+                </div>
+              </div>
+              <!-- Slide 2 -->
+              <div class="swiper-slide">
+                <h3>Amazing Information</h3>
+                <div class="date">
+                  <span class="pod gray">Podcast</span>
+                  <span>December 10</span>
+                </div>
+                <p class="gray">
+                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                  Vitae aliquam cupiditate, fugit facilis asperiores
+                  perspiciatis eveniet in dolorem non itaque.
+                </p>
+
+                <div class="profile">
+                  <img src="./Assets/cassandra.png" alt="cassandra's-photo" />
+                  <div class="profile-details">
+                    <h3>Cassandra</h3>
+                    <p class="gray">Web Developer</p>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <h3>Amazing Information</h3>
+                <div class="date">
+                  <span class="pod gray">Podcast</span>
+                  <span>December 10</span>
+                </div>
+                <p class="gray">
+                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                  Vitae aliquam cupiditate, fugit facilis asperiores
+                  perspiciatis eveniet in dolorem non itaque.
+                </p>
+
+                <div class="profile">
+                  <img src="./Assets/edem.png" alt="edem's-photo" />
+                  <div class="profile-details">
+                    <h3>Edem Thany</h3>
+                    <p class="gray">Digital Marketer</p>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <h3>Amazing Information</h3>
+                <div class="date">
+                  <span class="pod gray">Podcast</span>
+                  <span>December 10</span>
+                </div>
+                <p class="gray">
+                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                  Vitae aliquam cupiditate, fugit facilis asperiores
+                  perspiciatis eveniet in dolorem non itaque.
+                </p>
+
+                <div class="profile">
+                  <img src="./Assets/Ellipse 13.png" alt="cassandra's-photo" />
+                  <div class="profile-details">
+                    <h3>Cassandra</h3>
+                    <p class="gray">Digital Marketer</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-pagination"></div>
+          </div>
+        </article>
+      </section>
+
+      <!-- subscribe section -->
+      <section class="subscribe">
+        <div class="top">
+          <h2 class="heading">Powerful Features For Powerful Creators</h2>
+          <p class="gray">Choose plan that's right for you</p>
+          <div class="plans-toggle">
+            <span>Pay Monthly</span>
+            <div class="toggle-wrap">
+              <label for="toggle">
+                <input type="checkbox" id="toggle" class="toggle-input" />
+                <div class="toggle-switch"></div>
+              </label>
+            </div>
+            <span>Pay Yearly</span>
+          </div>
+        </div>
+
+        <div class="middle">
+          <div class="plans">
+            <div>
+              <h2>Freebie</h2>
+              <p class="gray">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id,
+                culpa?
+              </p>
+            </div>
+            <div class="price">
+              <h1>$0 <span class="gray">/Month</span></h1>
+            </div>
+            <div class="get-started">
+              <a href="#">Get Started Now</a>
+            </div>
+            <div class="features">
+              <div class="feature">
+                <img
+                  src="./Assets/check.png
+                    "
+                  alt="check"
+                />
+                <p>Lorem ipsum dolor sit amet.</p>
+              </div>
+              <div class="feature">
+                <img
+                  src="./Assets/check.png
+                    "
+                  alt="check"
+                />
+                <p>Lorem ipsum dolor sit amet.</p>
+              </div>
+              <div class="feature">
+                <img
+                  src="./Assets/error.png
+                    "
+                  alt="check"
+                />
+                <p class="gray">Lorem ipsum dolor sit amet.</p>
+              </div>
+              <div class="feature">
+                <img
+                  src="./Assets/error.png
+                    "
+                  alt="check"
+                />
+                <p class="gray">Lorem ipsum dolor sit amet.</p>
+              </div>
+            </div>
+          </div>
+          <div class="plans">
+            <div>
+              <h2>Professional</h2>
+              <p class="gray">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id,
+                culpa?
+              </p>
+            </div>
+            <div class="price">
+              <h1>$25 <span class="gray">/Month</span></h1>
+            </div>
+            <div class="get-started">
+              <a href="#">Get Started Now</a>
+            </div>
+            <div class="features">
+              <div class="feature">
+                <img
+                  src="./Assets/check.png
+                    "
+                  alt="check"
+                />
+                <p>Lorem ipsum dolor sit amet.</p>
+              </div>
+              <div class="feature">
+                <img
+                  src="./Assets/check.png
+                    "
+                  alt="check"
+                />
+                <p>Lorem ipsum dolor sit amet.</p>
+              </div>
+              <div class="feature">
+                <img
+                  src="./Assets/check.png
+                    "
+                  alt="check"
+                />
+                <p>Lorem ipsum dolor sit amet.</p>
+              </div>
+              <div class="feature">
+                <img
+                  src="./Assets/check.png
+                    "
+                  alt="check"
+                />
+                <p>Lorem ipsum dolor sit amet.</p>
+              </div>
+            </div>
+          </div>
+          <div class="plans">
+            <div>
+              <h2>Enterprise</h2>
+              <p class="gray">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id,
+                culpa?
+              </p>
+            </div>
+            <div class="price">
+              <h1>$100 <span class="gray">/Month</span></h1>
+            </div>
+            <div class="get-started">
+              <a href="#">Get Started Now</a>
+            </div>
+            <div class="features">
+              <div class="feature">
+                <img
+                  src="./Assets/check.png
+                    "
+                  alt="check"
+                />
+                <p>Lorem ipsum dolor sit amet.</p>
+              </div>
+              <div class="feature">
+                <img
+                  src="./Assets/check.png
+                    "
+                  alt="check"
+                />
+                <p>Lorem ipsum dolor sit amet.</p>
+              </div>
+              <div class="feature">
+                <img
+                  src="./Assets/check.png
+                    "
+                  alt="check"
+                />
+                <p>Lorem ipsum dolor sit amet.</p>
+              </div>
+              <div class="feature">
+                <img
+                  src="./Assets/check.png
+                    "
+                  alt="check"
+                />
+                <p>Lorem ipsum dolor sit amet.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="bottom">
+          <div class="context">
+            <div class="info">
+              <h3>Try it for free</h3>
+              <p>Lorem ipsum dolor sit amet.</p>
+              <p>Lorem ipsum dolor sit amet.</p>
+            </div>
+            <div class="data-input">
+              <input type="email" placeholder="Your email" />
+              <button>Subscribe</button>
+            </div>
+          </div>
+          <div class="image">
+            <img
+              src="./Assets/young-african-american-woman-s-portrait-isolated-pink-background 1.png"
+              alt=""
+            />
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <article>
+        <div class="footer-theme">
+          <h2 class="heading">Learn how to grow audience fast on Twitter</h2>
+          <a href="#">Download Free Chapter</a>
+        </div>
+        <hr />
+
+        <div class="footer-container">
+          <!-- About Section -->
+          <div class="footer-column about">
+            <h3>About the Podcast</h3>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipiscing elit venenatis
+              tristique, semper primis proin turpis habitasse ridiculus lacinia
+              ligula, viverra sapien.
+            </p>
+          </div>
+
+          <!-- Other Sections -->
+          <div class="footer-column">
+            <h3>Company</h3>
+            <ul>
+              <li><a href="#">Lorem ipsum</a></li>
+              <li><a href="#">Lorem ipsum</a></li>
+              <li><a href="#">Lorem ipsum</a></li>
+              <li><a href="#">Lorem ipsum</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-column">
+            <h3>Help</h3>
+            <ul>
+              <li><a href="#">Lorem ipsum</a></li>
+              <li><a href="#">Lorem ipsum</a></li>
+              <li><a href="#">Lorem ipsum</a></li>
+              <li><a href="#">Lorem ipsum</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-column">
+            <h3>Reference</h3>
+            <ul>
+              <li><a href="#">Lorem ipsum</a></li>
+              <li><a href="#">Lorem ipsum</a></li>
+              <li><a href="#">Lorem ipsum</a></li>
+              <li><a href="#">Lorem ipsum</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="social-icons">
+          <a href="#" aria-label="LinkedIn"
+            ><img src="./Assets/inkedin.png" alt=""
+          /></a>
+          <a href="#" aria-label="Instagram"
+            ><img src="./Assets/insta.png" alt=""
+          /></a>
+          <a href="#" aria-label="Twitter"
+            ><img src="./Assets/x.png" alt=""
+          /></a>
+          <a href="#" aria-label="Facebook"
+            ><img src="./Assets/facebook.png" alt=""
+          /></a>
+        </div>
+      </article>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script src="./script.js"></script>
+  </body>
+</html>
