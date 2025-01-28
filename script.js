@@ -1,3 +1,32 @@
+const hamburger = document.getElementById('hamburger');
+const navMenu = document.getElementById('nav-items');
+
+// Function to toggle the SVG path
+function toggleSVGPath(isOpen) {
+  const svgPath = hamburger.querySelector('path'); 
+  if (isOpen) {
+    svgPath.setAttribute(
+      'd',
+      'M2 4L14 14M2 14L14 4' // Cross icon path
+    );
+  } else {
+    svgPath.setAttribute(
+      'd',
+      'M2 3.75A.75.75 0 0 1 2.75 3h10.5a.75.75 0 0 1 0 1.5H2.75A.75.75 0 0 1 2 3.75ZM2 8a.75.75 0 0 1 .75-.75h10.5a.75.75 0 0 1 0 1.5H2.75A.75.75 0 0 1 2 8Zm0 4.25a.75.75 0 0 1 .75-.75h10.5a.75.75 0 0 1 0 1.5H2.75a.75.75 0 0 1-.75-.75Z' 
+    );
+  }
+}
+
+// Toggle menu visibility and icon state
+hamburger.addEventListener('click', () => {
+  navMenu.classList.toggle('open'); 
+  const isOpen = navMenu.classList.contains('open');
+  toggleSVGPath(isOpen);
+});
+
+
+
+
 const audio = document.getElementById("audio");
 const playPauseButton = document.querySelector(".play-pause");
 const playIcon = document.querySelector(".play-icon");

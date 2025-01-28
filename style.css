@@ -17,15 +17,18 @@
   --heading-clr: #000000;
   --header-height: 6rem;
   --text-clr: #5e5c5c;
+  --elapse-width: 100%;
 }
 
+html,
 body {
   font-family: "Kanit", serif;
   font-size: 1.1rem;
+  overflow-x: hidden;
 }
 
 .heading {
-    font-size: 2.5rem;
+  font-size: 2.5rem;
 }
 
 .header {
@@ -40,6 +43,15 @@ body {
   top: 0;
   left: 0;
   z-index: 10;
+}
+
+.size-4 {
+  width: 40px;
+  height: 40px;
+}
+
+.hamburger {
+  display: none;
 }
 
 .nav-items ul {
@@ -78,8 +90,6 @@ body {
 
 .nav-item .subscribe:hover {
   background: var(--basic--clr-2);
-  /* border: initial; */
-  /* border-bottom: inherit; */
 }
 
 /* hero styling */
@@ -109,7 +119,7 @@ body {
 }
 
 .container {
-  max-width: 90%;
+  width: 90%;
   margin: 0 auto;
 }
 
@@ -123,76 +133,84 @@ body {
 
 /* Audio Player */
 .audio-player {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    background-color: var(--heading-clr);
-    width: 25%;
-    padding: 1rem 2rem;
-    border-radius: 4rem;
-    margin: 2rem 0;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  background-color: var(--heading-clr);
+  width: 25%;
+  padding: 1rem 2rem;
+  border-radius: 4rem;
+  margin: 2rem 0;
+}
+
+.text {
+  font-size: 1.2rem;
+  margin: 0;
+}
+
+/* Visualizer Bars */
+.visualizer {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.visualizer span {
+  display: block;
+  width: 5px;
+  height: 20px;
+  background-color: white;
+  border-radius: 2px;
+  animation: bounce 1s infinite ease-in-out;
+}
+
+.visualizer span:nth-child(1) {
+  animation-delay: 0s;
+}
+.visualizer span:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.visualizer span:nth-child(3) {
+  animation-delay: 0.4s;
+}
+.visualizer span:nth-child(4) {
+  animation-delay: 0.6s;
+}
+.visualizer span:nth-child(5) {
+  animation-delay: 0.8s;
+}
+
+@keyframes bounce {
+  0%,
+  100% {
+    transform: scaleY(0.3);
   }
-  
-  .text {
-    font-size: 1.2rem;
-    margin: 0;
+  50% {
+    transform: scaleY(1);
   }
-  
-  /* Visualizer Bars */
-  .visualizer {
-    display: flex;
-    align-items: center;
-    gap: 5px;
-  }
-  
-  .visualizer span {
-    display: block;
-    width: 5px;
-    height: 20px;
-    background-color: white;
-    border-radius: 2px;
-    animation: bounce 1s infinite ease-in-out;
-  }
-  
-  .visualizer span:nth-child(1) { animation-delay: 0s; }
-  .visualizer span:nth-child(2) { animation-delay: 0.2s; }
-  .visualizer span:nth-child(3) { animation-delay: 0.4s; }
-  .visualizer span:nth-child(4) { animation-delay: 0.6s; }
-  .visualizer span:nth-child(5) { animation-delay: 0.8s; }
-  
-  @keyframes bounce {
-    0%, 100% {
-      transform: scaleY(0.3);
-    }
-    50% {
-      transform: scaleY(1);
-    }
-  }
-  
-  /* Play/Pause Button */
-  .play-pause {
-    width: 40px;
-    height: 40px;
-    background-color: white;
-    border: none;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    position: relative;
-  }
-  
-  .play-pause span {
-    color: red;
-    font-size: 1.5rem;
-  }
+}
+
+/* Play/Pause Button */
+.play-pause {
+  width: 40px;
+  height: 40px;
+  background-color: white;
+  border: none;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  position: relative;
+}
+
+.play-pause span {
+  color: red;
+  font-size: 1.5rem;
+}
 
 /* main styling */
 main .popular {
-  /* display: flex;
-    justify-content: center; */
-  /* align-items: center; */
   width: 90%;
   margin: 5rem auto;
 }
@@ -215,6 +233,7 @@ main .popular {
 }
 
 .popular .elapse {
+  max-width: 100%;
   display: flex;
 }
 
@@ -261,25 +280,25 @@ main .popular {
 }
 
 .cta {
-    display: flex;
-    align-items: center;
-    gap: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
 }
 
 .cta a {
-    color: var(--basic-clr);
-    background-color: var(--heading-clr);
-    padding: 1rem 1.5rem;
-    border-radius: 2rem;
+  color: var(--basic-clr);
+  background-color: var(--heading-clr);
+  padding: 1rem 1.5rem;
+  border-radius: 2rem;
 }
 
 .cta a:hover {
-    background: var(--theme-clr);
+  background: var(--theme-clr);
 }
 
 /* explore more section */
 .explore-more {
-  width: 90%;
+  max-width: 90%;
   margin: 0 auto;
 }
 
@@ -303,24 +322,28 @@ main .popular {
 }
 
 .podcast-list {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 3rem;
-    margin: 3rem 0;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 3rem;
+  margin: 3rem 0;
 }
 
 .podcast-audio {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    padding: 1rem;
-    border-radius: 8px;
-    background-color: var(--basic-clr);
-    box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  border-radius: 8px;
+  background-color: var(--basic-clr);
+  box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.1);
 }
 
 .podcast-audio:hover {
-    cursor: pointer;
+  cursor: pointer;
+}
+
+.podcast-audio img {
+  max-width: 100%;
 }
 
 .offer {
@@ -493,18 +516,21 @@ label {
 
 .middle .plans .price span {
   font-size: 1rem;
-  align-self: center;
 }
 
-.middle .plans .get-started a {
-  color: var(--basic-clr);
+.middle .plans .get-started {
+  text-align: center;
   background-color: var(--heading-clr);
   padding: 1rem 3rem;
   border-radius: 3rem;
 }
 
+.middle .plans .get-started a {
+  color: var(--basic-clr);
+}
+
 .middle .plans .get-started a:hover {
-    background-color: var(--theme-clr);
+  background-color: var(--theme-clr);
 }
 
 .middle .plans .features .feature {
@@ -531,8 +557,8 @@ label {
 }
 
 .bottom .context h3 {
-    font-size: 2rem;
-    margin-bottom: 1rem;
+  font-size: 2rem;
+  margin-bottom: 1rem;
 }
 
 .bottom .context .data-input input {
@@ -555,14 +581,14 @@ label {
 }
 
 .bottom .context .data-input button:hover {
-    cursor: pointer;
-    background: var(--theme-clr);
-    color: var(--basic-clr);
-  }
+  cursor: pointer;
+  background: var(--theme-clr);
+  color: var(--basic-clr);
+}
 
 footer {
   background: var(--heading-clr);
-  margin: 5% auto;
+  margin: 5% auto 0;
   padding: 5rem 0;
 }
 
@@ -573,22 +599,22 @@ article {
 }
 
 .footer-theme a {
-    color: var(--heading-clr);
-    background-color: var(--basic-clr);
-    padding: .5rem 1.3rem;
-    border-radius: 25px;
+  color: var(--heading-clr);
+  background-color: var(--basic-clr);
+  padding: 0.5rem 1.3rem;
+  border-radius: 25px;
 }
 
 .footer-theme {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 3rem;
 }
 
 .footer-container {
   display: grid;
-  grid-template-columns: 1.5fr 1fr 1fr 1fr; 
+  grid-template-columns: 1.5fr 1fr 1fr 1fr;
   gap: 3rem;
   margin: 2rem auto;
   color: var(--basic-clr);
@@ -619,4 +645,604 @@ article {
 
 .social-icons a:hover {
   transform: scale(1.2);
+}
+
+/* STARTING RESPONSIENESS */
+
+/* Device = Most of the Smartphones Mobiles (Portrait)
+Screen = B/w 320px to 479px */
+
+@media (min-width: 320px) and (max-width: 480px) {
+  body {
+    font-size: 90%;
+  }
+
+  .header {
+    padding: 1rem;
+  }
+
+  .nav-items{
+    display: none; /* Hidden by default for mobile */
+    flex-direction: column;
+    background: #444;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 200px;
+    border-radius: 0 0 8px 8px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+  }
+
+  .nav-items.open {
+    display: block;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  .container .theme {
+    font-size: 4rem;
+    line-height: 4rem;
+  }
+
+  .audio-player {
+    width: 100%;
+  }
+
+  .text {
+    font-size: 1rem;
+  }
+
+  .popular .head {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .context-main {
+    display: block;
+  }
+
+  .popular .elapse img {
+    width: 100%;
+  }
+
+  .popular .elapse .play {
+    width: 50%;
+  }
+
+  .popular .elapse .co-play {
+    top: 57pc;
+    left: 12pc;
+    width: 40%;
+  }
+
+  .content {
+    margin: 0;
+  }
+
+  .content h2 {
+    font-size: 1.5rem;
+    margin: 1rem 0;
+  }
+
+  .spread {
+    margin: 1rem 0;
+  }
+
+  .cta {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .explore-more {
+    max-width: 90%;
+    margin: auto;
+  }
+
+  .nav-container {
+    display: block;
+  }
+
+  .nav-container .nav a {
+    margin: 0 0.5rem;
+  }
+
+  .podcast-list {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .services-area {
+    flex-direction: column;
+  }
+
+  .middle {
+    width: 80%;
+    margin: 3rem auto;
+  }
+
+  .middle .plans .price {
+    font-size: 2.5rem;
+  }
+
+  .middle .plans .price span {
+    font-size: 1rem;
+  }
+
+  .middle .plans .get-started {
+    padding: 0.5rem 1rem;
+  }
+
+  .middle {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .bottom {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  input,
+  button {
+    display: block;
+    margin-bottom: 1rem;
+  }
+
+  .bottom .image img {
+    width: 100%;
+  }
+
+  .footer-theme {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .footer-container {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Device = Low Resolution Tablets, Mobiles (Landscape)
+ Screen = B/w 481px to 767px */
+
+@media (min-width: 481px) and (max-width: 767px) {
+  .header {
+    padding: 1rem;
+  }
+
+  .nav-items{
+    display: none; /* Hidden by default for mobile */
+    flex-direction: column;
+    background: #444;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 200px;
+    border-radius: 0 0 8px 8px;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    max-height: 0;
+  }
+
+  .nav-items.open {
+    display: flex;
+    max-width: 300px;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  .audio-player {
+    width: 70%;
+  }
+
+  .popular .head {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .context-main {
+    display: block;
+  }
+
+  .popular .elapse img {
+    width: 100%;
+  }
+
+  .popular .elapse .play {
+    width: 50%;
+  }
+
+  .popular .elapse .co-play {
+    top: 57pc;
+    left: 17pc;
+    width: 42%;
+  }
+
+  .content {
+    margin: 0;
+  }
+
+  .content h2 {
+    font-size: 1.5rem;
+    margin: 1rem 0;
+  }
+
+  .spread {
+    margin: 1rem 0;
+  }
+
+  .nav-container {
+    display: block;
+  }
+
+  .nav-container .nav a {
+    margin: 0 0.5rem;
+  }
+
+  .podcast-list {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .services-area {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .service {
+    margin-bottom: 1.5rem;
+  }
+
+  .middle {
+    width: 80%;
+    margin: 3rem auto;
+  }
+
+  .middle .plans .price {
+    font-size: 2.5rem;
+  }
+
+  .middle .plans .price span {
+    font-size: 1rem;
+  }
+
+  .middle .plans .get-started {
+    padding: 0.5rem 1rem;
+  }
+
+  .middle {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .bottom {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  input,
+  button {
+    display: block;
+    margin-bottom: 1rem;
+  }
+
+  .bottom .image img {
+    width: 100%;
+  }
+
+  .footer-theme {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .footer-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Device = Tablets, Ipads (portrait)  ##Screen = B/w 768px to 1024px */
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .header {
+    padding: 1rem;
+  }
+
+  .nav-items{
+    display: none; /* Hidden by default for mobile */
+    flex-direction: column;
+    background: #444;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 200px;
+    border-radius: 0 0 8px 8px;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    max-height: 0;
+  }
+
+  .nav-items.open {
+    display: flex;
+    max-width: 300px;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  .audio-player {
+    width: 70%;
+  }
+
+  .popular .head {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .context-main {
+    display: block;
+  }
+
+  .popular .elapse img {
+    width: 100%;
+  }
+
+  .popular .elapse .play {
+    width: 50%;
+  }
+
+  .popular .elapse .co-play {
+    top: 57pc;
+    left: 17pc;
+    width: 42%;
+  }
+
+  .content {
+    margin: 0;
+  }
+
+  .content h2 {
+    font-size: 1.5rem;
+    margin: 1rem 0;
+  }
+
+  .spread {
+    margin: 1rem 0;
+  }
+
+  .nav-container {
+    display: block;
+  }
+
+  .nav-container .nav a {
+    margin: 0 0.5rem;
+  }
+
+  .podcast-list {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .services-area {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .service {
+    margin-bottom: 1.5rem;
+  }
+
+  .middle {
+    width: 80%;
+    margin: 3rem auto;
+  }
+
+  .middle .plans .price {
+    font-size: 2.5rem;
+  }
+
+  .middle .plans .price span {
+    font-size: 1rem;
+  }
+
+  .middle .plans .get-started {
+    padding: 0.5rem 1rem;
+  }
+
+  .middle {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .bottom {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  input,
+  button {
+    display: block;
+    margin-bottom: 1rem;
+  }
+
+  .bottom .image img {
+    width: 100%;
+  }
+
+  .footer-theme {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .footer-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Device = Tablets, Ipads (landscape)  Screen = B/w 768px to 1024px */
+
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+  .header {
+    padding: 1rem;
+  }
+
+  .nav-items{
+    display: none; /* Hidden by default for mobile */
+    flex-direction: column;
+    background: #444;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 200px;
+    border-radius: 0 0 8px 8px;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    max-height: 0;
+  }
+
+  .nav-items.open {
+    display: flex;
+    max-width: 300px;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  .audio-player {
+    width: 50%;
+  }
+
+  .popular .head {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .context-main {
+    display: block;
+  }
+
+  .popular .elapse img {
+    width: 100%;
+  }
+
+  .popular .elapse .play {
+    width: 50%;
+  }
+
+  .popular .elapse .co-play {
+    top: 62pc;
+    left: 24pc;
+    width: 40%;
+  }
+
+  .content {
+    margin: 0;
+  }
+
+  .content h2 {
+    font-size: 1.5rem;
+    margin: 1rem 0;
+  }
+
+  .spread {
+    margin: 1rem 0;
+  }
+
+  .nav-container {
+    display: block;
+  }
+
+  .nav-container .nav a {
+    margin: 0 0.5rem;
+  }
+
+  .services-area {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .service {
+    margin-bottom: 1.5rem;
+  }
+
+  .middle {
+    width: 80%;
+    margin: 3rem auto;
+  }
+
+  .middle .plans .price span {
+    font-size: 1rem;
+  }
+
+  .middle .plans .get-started {
+    padding: 0.5rem 1rem;
+  }
+
+  .middle {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .bottom {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  input,
+  button {
+    display: block;
+    margin-bottom: 1rem;
+  }
+
+  .bottom .image img {
+    width: 100%;
+  }
+
+  .footer-theme {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+/* Device = Laptops, Desktops  ##Screen = B/w 1025px to 1280px */
+
+@media (min-width: 1025px) and (max-width: 1280px) {
+  body {
+    font-size: 90%;
+  }
+
+  .audio-player {
+    width: 20%;
+  }
+
+  .header {
+    padding: 1rem;
+  }
+
+  .heading {
+    font-size: 2rem;
+  }
+
+  .middle .plans .price {
+    font-size: 3rem;
+  }
+  .audio-player {
+    width: 50%;
+  }
+
+  input,
+  button {
+    display: block;
+    margin-bottom: 1rem;
+  }
 }
