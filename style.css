@@ -38,7 +38,7 @@ body {
   height: var(--header-height);
   background: rgba(0, 0, 0, 0.2);
   width: 100%;
-  padding: 1rem 5rem;
+  padding: 1rem 3.3rem;
   position: fixed;
   top: 0;
   left: 0;
@@ -121,6 +121,10 @@ body {
 .container {
   width: 90%;
   margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
 }
 
 .container .theme {
@@ -137,9 +141,8 @@ body {
   align-items: center;
   gap: 20px;
   background-color: var(--heading-clr);
-  width: 25%;
   padding: 1rem 2rem;
-  border-radius: 4rem;
+  border-radius: 35px;
   margin: 2rem 0;
 }
 
@@ -178,6 +181,15 @@ body {
 }
 .visualizer span:nth-child(5) {
   animation-delay: 0.8s;
+}
+.visualizer span:nth-child(6) {
+  animation-delay: 1s;
+}
+.visualizer span:nth-child(7) {
+  animation-delay: 1.2s;
+}
+.visualizer span:nth-child(8) {
+  animation-delay: 1.4s;
 }
 
 @keyframes bounce {
@@ -223,6 +235,15 @@ main .popular {
 
 .popular .head h2 {
   font-size: 2rem;
+}
+
+.popular .head a {
+  color: var(--text-clr);
+}
+
+.popular .head a:hover {
+  color: var(--theme-clr);
+  text-decoration: underline;
 }
 
 .context-main {
@@ -342,8 +363,54 @@ main .popular {
   cursor: pointer;
 }
 
-.podcast-audio img {
+/* .podcast-audio img {
   max-width: 100%;
+} */
+
+.podcast-audio .progress-slider {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 200px;
+  height: 6px;
+  background: lightgray;
+  border-radius: 5px;
+  outline: none;
+  overflow: hidden;
+  transition: all 0.3s ease-in-out;
+}
+
+.podcast-audio .progress-slider::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 6px;
+  background: lightgray;
+  border-radius: 5px;
+}
+
+/* Progress fill */
+.progress-slider::-mox-range-progress {
+  background: var(--theme-clr);
+  height: 6px;
+  border-radius: 5px;
+}
+
+.podcast-audio .progress-slider::-webkit-slider-runnable-track {
+  background: linear-gradient(to right, red 30%, lightgray 30%);
+}
+
+/* knob */
+.progress-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 12px;
+  height: 12px;
+  background: red;
+  background-origin: 50%;
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out;
+}
+
+.progress-slider::-webkit-slider-thumb:hover {
+  transform: scale(1.2);
 }
 
 .offer {
@@ -503,11 +570,11 @@ label {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 2rem;
-  padding: 2rem 1.5rem;
+  padding: 1.5rem;
   background-color: var(--basic-clr);
   box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.2);
-  border-radius: 15px;
+  border-radius: 35px;
+  transition: transform 1s ease-in-out;
 }
 
 .middle .plans .price {
@@ -518,26 +585,31 @@ label {
   font-size: 1rem;
 }
 
-.middle .plans .get-started {
+.middle .plans a {
   text-align: center;
   background-color: var(--heading-clr);
-  padding: 1rem 3rem;
+  padding: 1rem 2rem;
   border-radius: 3rem;
-}
-
-.middle .plans .get-started a {
   color: var(--basic-clr);
+  margin-bottom: 1rem;
 }
 
-.middle .plans .get-started a:hover {
-  background-color: var(--theme-clr);
-}
+/* .middle .plans a:hover {
+  background-color: var(--basic-clr);
+  color: var(--heading-clr);
+} */
 
 .middle .plans .features .feature {
   display: flex;
   align-items: center;
   gap: 1rem;
   margin-bottom: 1rem;
+}
+
+.middle .plans:hover {
+  /* background-color: var(--theme-clr); */
+  /* color: var(--basic-clr); */
+  transform: scale(1.05);
 }
 
 .bottom {
